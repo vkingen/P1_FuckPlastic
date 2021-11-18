@@ -24,5 +24,4 @@ public class FishingNet : MonoBehaviour
         lR.SetPosition(1, player2.position);
     }
 
-
 }
