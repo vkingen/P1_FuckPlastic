@@ -7,6 +7,7 @@ public class BoatMove : MonoBehaviour
     public float speed = 5.0f;
     Rigidbody rb;
     public bool isPlayerOne;
+    public bool isMoving = true;
 
     private void Start()
     {
@@ -15,17 +16,26 @@ public class BoatMove : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(isMoving);
         if(isPlayerOne)
         {
-            float horizontal = Input.GetAxis("Horizontal");
-            float vertical = Input.GetAxis("Vertical");
-            rb.velocity = new Vector3(horizontal * speed, rb.velocity.y, vertical * speed);
+            if(isMoving)
+            {
+                float horizontal = Input.GetAxis("Horizontal");
+                float vertical = Input.GetAxis("Vertical");
+                rb.velocity = new Vector3(horizontal * speed, rb.velocity.y, vertical * speed);
+            }
+            
         }
         else
         {
-            float horizontal = Input.GetAxis("Horizontal2");
-            float vertical = Input.GetAxis("Vertical2");
-            rb.velocity = new Vector3(horizontal * speed, rb.velocity.y, vertical * speed);
+            if(isMoving)
+            {
+                float horizontal = Input.GetAxis("Horizontal2");
+                float vertical = Input.GetAxis("Vertical2");
+                rb.velocity = new Vector3(horizontal * speed, rb.velocity.y, vertical * speed);
+            }
+            
         }
     }
 }
