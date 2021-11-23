@@ -11,43 +11,77 @@ public class Controls : MonoBehaviour
     public float jumpVelocity = 5f;
     public float moveSpeed = 10f;
 
+    public bool isPlayerOne;
+    public bool isMoving = true;
+
     private float vInput;
     private float hInput;
 
     private Rigidbody rb;
-    private CapsuleCollider col;
+    private BoxCollider col;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        col = GetComponent<CapsuleCollider>();
+        col = GetComponent<BoxCollider>();
     }
 
     private bool isGrounded()
     {
-        Vector3 capsuleBottom = new Vector3(col.bounds.center.x, col.bounds.min.y, col.bounds.center.z);
+        Vector3 boxBottom = new Vector3(col.bounds.center.x, col.bounds.min.y, col.bounds.center.z);
 
-        bool grounded = Physics.CheckCapsule(col.bounds.center, capsuleBottom, distance2Ground, groundLayer, QueryTriggerInteraction.Ignore);
+        bool grounded = Physics.CheckCapsule(col.bounds.center, boxBottom, distance2Ground, groundLayer, QueryTriggerInteraction.Ignore);
 
         return grounded;
     }
 
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-
-        rb.velocity = new Vector3(horizontal * moveSpeed, rb.velocity.y, vertical * moveSpeed);
-
-        if (isGrounded() && Input.GetKeyDown(KeyCode.J))
+        Debug.Log(isMoving);
+        if (isPlayerOne)
         {
+            if (isMoving)
+            {
 
-            rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
+                float horizontal = Input.GetAxis("Horizontal");
+                float vertical = Input.GetAxis("Vertical");
+
+                rb.velocity = new Vector3(horizontal * moveSpeed, rb.velocity.y, vertical * moveSpeed);
+
+                if (isGrounded() && Input.GetButtonDown("Jump"))
+                {
+
+                    rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
+
+                }
+            }
 
         }
+
+        else
+        {
+            if (isMoving)
+            {
+                float horizontal = Input.GetAxis("Horizontal2");
+                float vertical = Input.GetAxis("Vertical2");
+                rb.velocity = new Vector3(horizontal * moveSpeed, rb.velocity.y, vertical * moveSpeed);
+                
+                if (isGrounded() && Input.GetButtonDown("Jump2"))
+                {
+
+                    rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
+
+                }
+            }
+
+
+        }
+
+
+        
 
     }
 
