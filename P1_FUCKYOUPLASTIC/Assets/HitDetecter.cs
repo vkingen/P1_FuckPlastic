@@ -21,8 +21,8 @@ public class HitDetecter : MonoBehaviour
                 Debug.Log("HitPlayer2");
                 bm = collision.gameObject.GetComponent<BoatMove>();
                 bm.isMoving = false;
-                rb = collision.gameObject.GetComponent<Rigidbody>();
-                rb.AddForce(transform.forward * addForceSpeed);
+                //rb = collision.gameObject.GetComponent<Rigidbody>();
+                //rb.AddForce(transform.up * addForceSpeed);
 
                 StartCoroutine(Delay());
 
@@ -33,8 +33,8 @@ public class HitDetecter : MonoBehaviour
                 Debug.Log("HitPlayer1");
                 bm = collision.gameObject.GetComponent<BoatMove>();
                 bm.isMoving = false;
-                rb = collision.gameObject.GetComponent<Rigidbody>();
-                rb.AddForce(transform.forward * addForceSpeed);
+                //rb = collision.gameObject.GetComponent<Rigidbody>();
+                //rb.AddForce(transform.up * addForceSpeed);
 
                 StartCoroutine(Delay());
             }
@@ -44,7 +44,7 @@ public class HitDetecter : MonoBehaviour
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
         bm.isMoving = true;
     }
 }
