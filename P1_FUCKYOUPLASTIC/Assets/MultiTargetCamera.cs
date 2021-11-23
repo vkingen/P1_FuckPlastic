@@ -13,8 +13,8 @@ public class MultiTargetCamera : MonoBehaviour
     private Vector3 velocity;
     private Camera cam;
 
-    public float minZoom = 40f;
-    public float maxZoom = 10f;
+    public float minZoom = 80f;
+    public float maxZoom = 40f;
     public float zoomLimiter = 50f;
 
     private void Start()
