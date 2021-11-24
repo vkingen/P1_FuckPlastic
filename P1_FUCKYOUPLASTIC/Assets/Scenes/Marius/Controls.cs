@@ -20,7 +20,6 @@ public class Controls : MonoBehaviour
     private Rigidbody rb;
     private BoxCollider col;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -35,9 +34,6 @@ public class Controls : MonoBehaviour
 
         return grounded;
     }
-
-
-    // Update is called once per frame
     private void Update()
     {
         Debug.Log(isMoving);
@@ -45,7 +41,6 @@ public class Controls : MonoBehaviour
         {
             if (isMoving)
             {
-
                 float horizontal = Input.GetAxis("Horizontal");
                 float vertical = Input.GetAxis("Vertical");
 
@@ -53,14 +48,10 @@ public class Controls : MonoBehaviour
 
                 if (isGrounded() && Input.GetButtonDown("Jump"))
                 {
-
                     rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
-
                 }
             }
-
         }
-
         else
         {
             if (isMoving)
@@ -68,7 +59,7 @@ public class Controls : MonoBehaviour
                 float horizontal = Input.GetAxis("Horizontal2");
                 float vertical = Input.GetAxis("Vertical2");
                 rb.velocity = new Vector3(horizontal * moveSpeed, rb.velocity.y, vertical * moveSpeed);
-                
+
                 if (isGrounded() && Input.GetButtonDown("Jump2"))
                 {
 
@@ -76,13 +67,6 @@ public class Controls : MonoBehaviour
 
                 }
             }
-
-
         }
-
-
-        
-
     }
-
 }
