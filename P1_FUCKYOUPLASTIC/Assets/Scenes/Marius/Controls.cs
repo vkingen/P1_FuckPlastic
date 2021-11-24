@@ -7,7 +7,7 @@ public class Controls : MonoBehaviour
 {
     public LayerMask groundLayer;
 
-    public float distance2Ground = 0.1f;
+    public float distanceToGround = 0.1f;
     public float jumpVelocity = 5f;
     public float moveSpeed = 10f;
 
@@ -30,7 +30,7 @@ public class Controls : MonoBehaviour
     {
         Vector3 boxBottom = new Vector3(col.bounds.center.x, col.bounds.min.y, col.bounds.center.z);
 
-        bool grounded = Physics.CheckCapsule(col.bounds.center, boxBottom, distance2Ground, groundLayer, QueryTriggerInteraction.Ignore);
+        bool grounded = Physics.CheckCapsule(col.bounds.center, boxBottom, distanceToGround, groundLayer, QueryTriggerInteraction.Ignore);
 
         return grounded;
     }
@@ -41,10 +41,10 @@ public class Controls : MonoBehaviour
         {
             if (isMoving)
             {
-                float horizontal = Input.GetAxis("Horizontal");
-                float vertical = Input.GetAxis("Vertical");
+                hInput = Input.GetAxis("Horizontal");
+                vInput = Input.GetAxis("Vertical");
 
-                rb.velocity = new Vector3(horizontal * moveSpeed, rb.velocity.y, vertical * moveSpeed);
+                rb.velocity = new Vector3(hInput * moveSpeed, rb.velocity.y, vInput * moveSpeed);
 
                 if (isGrounded() && Input.GetButtonDown("Jump"))
                 {
