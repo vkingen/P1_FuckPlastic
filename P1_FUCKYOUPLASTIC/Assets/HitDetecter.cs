@@ -10,9 +10,17 @@ public class HitDetecter : MonoBehaviour
     public float addForceSpeed = 10000f;
     BoatMove bm;
 
+    AudioSource aS;
+
     public float delayTimeForPlayerMovement = 0.5f;
 
-    
+
+    private void Start()
+    {
+        aS = GetComponent<AudioSource>();
+    }
+
+
     private void OnCollisionEnter(Collision collision)
     {
         //if (collision.gameObject.tag == "Ball")
@@ -32,11 +40,12 @@ public class HitDetecter : MonoBehaviour
             if (isPlayerOne)
             {
                 gm.DamagePlayer2();
+                aS.Play();
                 bm = collision.gameObject.GetComponent<BoatMove>();
                 //bm.enabled = false;
                 bm.isMoving = false;
                 //collision.gameObject.GetComponent<Rigidbody>().AddForce(transform.up * addForceSpeed);
-
+                
                 // Calculate Angle Between the collision point and the player
                 Vector3 dir = collision.contacts[0].point - transform.position;
                 // We then get the opposite (-Vector3) and normalize it
@@ -51,10 +60,11 @@ public class HitDetecter : MonoBehaviour
             else
             {
                 gm.DamagePlayer1();
+                aS.Play();
                 bm = collision.gameObject.GetComponent<BoatMove>();
                 //bm.enabled = false;
                 bm.isMoving = false;
-                collision.gameObject.GetComponent<Rigidbody>().AddForce(transform.up * addForceSpeed);
+                //collision.gameObject.GetComponent<Rigidbody>().AddForce(transform.up * addForceSpeed);
 
                 // Calculate Angle Between the collision point and the player
                 Vector3 dir = collision.contacts[0].point - transform.position;
