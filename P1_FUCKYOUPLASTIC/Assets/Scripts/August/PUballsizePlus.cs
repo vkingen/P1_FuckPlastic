@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PUballsizePlus : MonoBehaviour
 {
+        public GameObject pickupEffect;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"));
@@ -17,6 +19,11 @@ public class PUballsizePlus : MonoBehaviour
 
     void Pickup()
     {
-        Debug.Log("Ballsize maximized!");
+        Instantiate(pickupEffect, transform.position, transform.rotation);
+
+
+
+
+        Destroy(gameObject);
     }
 }
