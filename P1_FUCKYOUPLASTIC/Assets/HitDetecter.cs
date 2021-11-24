@@ -33,6 +33,7 @@ public class HitDetecter : MonoBehaviour
             {
                 gm.DamagePlayer2();
                 bm = collision.gameObject.GetComponent<BoatMove>();
+                //bm.enabled = false;
                 bm.isMoving = false;
                 //collision.gameObject.GetComponent<Rigidbody>().AddForce(transform.up * addForceSpeed);
 
@@ -51,6 +52,7 @@ public class HitDetecter : MonoBehaviour
             {
                 gm.DamagePlayer1();
                 bm = collision.gameObject.GetComponent<BoatMove>();
+                //bm.enabled = false;
                 bm.isMoving = false;
                 collision.gameObject.GetComponent<Rigidbody>().AddForce(transform.up * addForceSpeed);
 
@@ -71,6 +73,7 @@ public class HitDetecter : MonoBehaviour
     IEnumerator Delay()
     {
         yield return new WaitForSeconds(delayTimeForPlayerMovement);
+        //bm.enabled = false;
         bm.isMoving = true;
     }
 }

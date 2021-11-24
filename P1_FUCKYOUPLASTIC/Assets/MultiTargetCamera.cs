@@ -17,6 +17,10 @@ public class MultiTargetCamera : MonoBehaviour
     public float maxZoom = 40f;
     public float zoomLimiter = 50f;
 
+
+    Vector3 startPos = new Vector3(0,12,-13);
+    public bool isDead = false;
+
     private void Start()
     {
         cam = GetComponent<Camera>();
@@ -30,10 +34,14 @@ public class MultiTargetCamera : MonoBehaviour
         Movement();
         Zoom();
 
-
-
     }
-
+    private void FixedUpdate()
+    {
+        if (isDead)
+        {
+            transform.position = Vector3.Lerp(transform.position, startPos, 1 * Time.deltaTime);
+        }
+    }
 
     void Zoom()
     {
@@ -42,7 +50,6 @@ public class MultiTargetCamera : MonoBehaviour
 
 
     }
-
 
 
     void Movement()
