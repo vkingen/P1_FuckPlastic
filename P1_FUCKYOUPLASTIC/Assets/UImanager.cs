@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UImanager : MonoBehaviour
 {
-    public Text fightText;
+    public TMP_Text fightText;
     public int timer = 3;
 
 
