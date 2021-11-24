@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//https://www.youtube.com/watch?v=YUcvy9PHeXs
 public class InGamePointSystem : MonoBehaviour
 {
     public static InGamePointSystem instance;
