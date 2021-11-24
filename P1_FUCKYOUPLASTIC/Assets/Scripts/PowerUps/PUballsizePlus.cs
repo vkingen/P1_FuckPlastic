@@ -14,7 +14,7 @@ public class PUballsizePlus : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player1"))
+        if (other.CompareTag("Player"))
 
         {
             Pickup(other);
@@ -30,7 +30,7 @@ public class PUballsizePlus : MonoBehaviour
     }
 
 
-    void Pickup(Collider Bolder_Player1)
+    void Pickup(Collider other)
     {
         Instantiate(pickupEffect, transform.position, transform.rotation);
 
@@ -41,7 +41,7 @@ public class PUballsizePlus : MonoBehaviour
         Destroy(gameObject);
 
     }
-    void Pickup2(Collider Bolder_Player2)
+    void Pickup2(Collider other)
     {
         Instantiate(pickupEffect, transform.position, transform.rotation);
 
