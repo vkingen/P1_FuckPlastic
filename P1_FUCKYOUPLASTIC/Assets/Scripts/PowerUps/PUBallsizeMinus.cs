@@ -25,7 +25,7 @@ public class PUBallsizeMinus : MonoBehaviour
         else if (other.CompareTag("Player2"))
 
         {
-            StartCoroutine (Pickup2(other));
+            StartCoroutine(Pickup2(other));
         }
 
 
