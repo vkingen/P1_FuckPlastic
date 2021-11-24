@@ -5,6 +5,10 @@ using UnityEngine;
 public class PUBallsizeMinus : MonoBehaviour
 {
 
+    public GameObject pickupEffect;
+
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -19,7 +23,11 @@ public class PUBallsizeMinus : MonoBehaviour
 
     void Pickup()
     {
-        Debug.Log("Ballsize minimized!");
+        Instantiate(pickupEffect, transform.position, transform.rotation);
+
+
+
+        Destroy(gameObject);
     }
 
 
