@@ -11,7 +11,6 @@ public class MapSelection : MonoBehaviour
     public void Island()
     {
         SceneManager.LoadScene("Island");
-        Debug.Log("Hello World");
     }
 
     //The space button in UI calls the Space method which loads the scene Space.

@@ -5,31 +5,42 @@ using UnityEngine.UI;
 
 public class InGamePointSystem : MonoBehaviour
 {
-    public int playerOnePoints, playerTwoPoints;
-    private int addPoint = 1;
-    public Text playerOnePointsText, playerTwoPointsText;
-    public string scoreText = "Score: ";
-
     public static InGamePointSystem instance;
+
+    public int playerLives = 3;
+    public int playerOneLives, playerTwoLives;
+    private int removeLife = 1;
+
+    public Text playerOneLivesText, playerTwoLivesText;
+
+    public string lifeText = "Lives: ";
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        playerOnePointsText.text = scoreText + playerOnePoints.ToString();
-        playerTwoPointsText.text = scoreText + playerTwoPoints.ToString();
+        playerOneLives = playerLives;
+        playerTwoLives = playerLives;
+
+        playerOneLivesText.text = lifeText + playerOneLives.ToString();
+        playerTwoLivesText.text = lifeText + playerTwoLives.ToString();
     }
 
 
-    public void AddPointPlayerOne()
+    public void RemoveLifePlayerOne()
     {
-        playerOnePoints += addPoint;
-        playerOnePointsText.text = scoreText + playerOnePoints.ToString();
+        playerOneLives -= removeLife;
+        playerOneLivesText.text = lifeText + playerOneLives.ToString();
     }
 
-    public void AddPointPlayerTwo()
+    public void RemoveLifePlayerTwo()
     {
-        playerTwoPoints += addPoint;
-        playerTwoPointsText.text = scoreText + playerTwoPoints.ToString();
+        playerTwoLives -= removeLife;
+        playerTwoLivesText.text = lifeText + playerTwoLives.ToString();
     }
 
 }
