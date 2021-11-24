@@ -12,7 +12,7 @@ public class PUBallsizeMinus : MonoBehaviour
     public GameObject Bolder_Player1;
     public GameObject Bolder_Player2;
 
-    public int timer = 10;
+    public int timer = 5;
 
     private void OnTriggerEnter(Collider other)
     {
