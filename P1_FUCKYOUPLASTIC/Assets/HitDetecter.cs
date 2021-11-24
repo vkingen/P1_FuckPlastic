@@ -7,22 +7,42 @@ public class HitDetecter : MonoBehaviour
     public string otherTagToDetect;
     public GameManager gm;
     public bool isPlayerOne;
-    Rigidbody rb;
     public float addForceSpeed = 10000f;
     BoatMove bm;
 
+    public float delayTimeForPlayerMovement = 0.5f;
+
+    
     private void OnCollisionEnter(Collision collision)
     {
+        //if (collision.gameObject.tag == "Ball")
+        //{
+        //    // Calculate Angle Between the collision point and the player
+        //    Vector3 dir = collision.contacts[0].point - transform.position;
+        //    // We then get the opposite (-Vector3) and normalize it
+        //    dir = -dir.normalized;
+        //    // And finally we add force in the direction of dir and multiply it by force. 
+        //    // This will push back the player
+        //    collision.gameObject.GetComponent<Rigidbody>().AddForce(dir * addForceSpeed);
+        //    Debug.Log("ballhit");
+        //}
+
         if (collision.gameObject.tag == otherTagToDetect)
         {
             if (isPlayerOne)
             {
                 gm.DamagePlayer2();
-                Debug.Log("HitPlayer2");
                 bm = collision.gameObject.GetComponent<BoatMove>();
                 bm.isMoving = false;
-                //rb = collision.gameObject.GetComponent<Rigidbody>();
-                //rb.AddForce(transform.up * addForceSpeed);
+                //collision.gameObject.GetComponent<Rigidbody>().AddForce(transform.up * addForceSpeed);
+
+                // Calculate Angle Between the collision point and the player
+                Vector3 dir = collision.contacts[0].point - transform.position;
+                // We then get the opposite (-Vector3) and normalize it
+                dir = -dir.normalized;
+                // And finally we add force in the direction of dir and multiply it by force. 
+                // This will push back the player
+                collision.gameObject.GetComponent<Rigidbody>().AddForce(dir * addForceSpeed);
 
                 StartCoroutine(Delay());
 
@@ -30,21 +50,27 @@ public class HitDetecter : MonoBehaviour
             else
             {
                 gm.DamagePlayer1();
-                Debug.Log("HitPlayer1");
                 bm = collision.gameObject.GetComponent<BoatMove>();
                 bm.isMoving = false;
-                //rb = collision.gameObject.GetComponent<Rigidbody>();
-                //rb.AddForce(transform.up * addForceSpeed);
+                collision.gameObject.GetComponent<Rigidbody>().AddForce(transform.up * addForceSpeed);
+
+                // Calculate Angle Between the collision point and the player
+                Vector3 dir = collision.contacts[0].point - transform.position;
+                // We then get the opposite (-Vector3) and normalize it
+                dir = -dir.normalized;
+                // And finally we add force in the direction of dir and multiply it by force. 
+                // This will push back the player
+                collision.gameObject.GetComponent<Rigidbody>().AddForce(dir * addForceSpeed);
 
                 StartCoroutine(Delay());
             }
         }
     }
-
+    
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(delayTimeForPlayerMovement);
         bm.isMoving = true;
     }
 }

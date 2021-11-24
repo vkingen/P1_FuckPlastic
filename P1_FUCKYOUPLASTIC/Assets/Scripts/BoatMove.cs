@@ -16,7 +16,6 @@ public class BoatMove : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(isMoving);
         if(isPlayerOne)
         {
             if(isMoving)
