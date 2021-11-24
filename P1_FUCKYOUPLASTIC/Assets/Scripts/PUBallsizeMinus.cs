@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PUballsizePlus : MonoBehaviour
-
+public class PUBallsizeMinus : MonoBehaviour
 {
-    public float multiplier = 2.5f;
+
+    public float multiplier = -2.5f;
 
     public GameObject pickupEffect;
 
@@ -34,7 +34,7 @@ public class PUballsizePlus : MonoBehaviour
     {
         Instantiate(pickupEffect, transform.position, transform.rotation);
 
-        Bolder_Player1 = GameObject.Find("Bolder_Player1");
+        Bolder_Player1 = GameObject.Find("Bolder_Player2");
 
         Bolder_Player1.transform.localScale *= multiplier;
 
@@ -45,11 +45,15 @@ public class PUballsizePlus : MonoBehaviour
     {
         Instantiate(pickupEffect, transform.position, transform.rotation);
 
-        Bolder_Player2 = GameObject.Find("Bolder_Player2");
+        Bolder_Player2 = GameObject.Find("Bolder_Player1");
 
         Bolder_Player2.transform.localScale *= multiplier;
 
         Destroy(gameObject);
 
     }
+
+
+
+
 }
