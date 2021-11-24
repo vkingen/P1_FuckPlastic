@@ -8,9 +8,11 @@ public class BoatMove : MonoBehaviour
     Rigidbody rb;
     public bool isPlayerOne;
     public bool isMoving = true;
+    AudioSource aS;
 
     private void Start()
     {
+        aS = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -23,6 +25,17 @@ public class BoatMove : MonoBehaviour
                 float horizontal = Input.GetAxis("Horizontal");
                 float vertical = Input.GetAxis("Vertical");
                 rb.velocity = new Vector3(horizontal * speed, rb.velocity.y, vertical * speed);
+
+                if(rb.velocity.x != 0 || rb.velocity.z != 0)
+                {
+                    if (!aS.isPlaying)
+                    {
+                        aS.Play();
+                        Debug.Log("Play");
+                    }
+                }  
+                else
+                    aS.Stop();
             }
             
         }
@@ -33,6 +46,17 @@ public class BoatMove : MonoBehaviour
                 float horizontal = Input.GetAxis("Horizontal2");
                 float vertical = Input.GetAxis("Vertical2");
                 rb.velocity = new Vector3(horizontal * speed, rb.velocity.y, vertical * speed);
+
+                if (rb.velocity.x != 0 || rb.velocity.z != 0)
+                {
+                    if (!aS.isPlaying)
+                    {
+                        aS.Play();
+                        Debug.Log("Play");
+                    }
+                }
+                else
+                    aS.Stop();
             }
             
         }

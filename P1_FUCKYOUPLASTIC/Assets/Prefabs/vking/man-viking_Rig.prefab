@@ -583,7 +583,7 @@ Transform:
   m_GameObject: {fileID: 4824500177062166889}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4824500177062468949}
   - {fileID: 4824500177062468937}
@@ -619,7 +619,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4824500177062468937}
   - component: {fileID: 4824500177056894069}
-  - component: {fileID: 6129984295641110833}
   m_Layer: 0
   m_Name: man-viking_Rig
   m_TagString: Untagged
@@ -715,20 +714,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0021056533, y: -0.06501725, z: 0.011202499}
     m_Extent: {x: 0.9236699, y: 0.99796534, z: 0.2348042}
   m_DirtyAABB: 0
---- !u!136 &6129984295641110833
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4824500177062166891}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.9236699
-  m_Height: 1.9987901
-  m_Direction: 1
-  m_Center: {x: 0.00021480967, y: 0.8714436, z: 0.020209089}
 --- !u!1 &4824500177062166893
 GameObject:
   m_ObjectHideFlags: 0
