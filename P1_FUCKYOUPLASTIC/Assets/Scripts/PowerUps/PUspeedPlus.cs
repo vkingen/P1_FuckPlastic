@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PUballsizePlus : MonoBehaviour
+public class PUspeedPlus : MonoBehaviour
 {
-
-    public float multiplier = 2.5f;
+    public float multiplier = 3f;
+    public float originalSpeed = 5.0f;
 
     public GameObject pickupEffect;
 
-    public GameObject Bolder_Player1;
-    public GameObject Bolder_Player2;
+    public GameObject Player;
+    public GameObject Player2;
 
     public int timer = 5;
 
@@ -36,18 +36,19 @@ public class PUballsizePlus : MonoBehaviour
     {
         Instantiate(pickupEffect, transform.position, transform.rotation);
 
-        Bolder_Player1 = GameObject.Find("Bolder_Player1");
+        GameObject Player1 = GameObject.Find("Player");
 
-        Bolder_Player1.transform.localScale *= multiplier;
+        BoatMove BoatMove = Player.GetComponent<BoatMove>();
+        BoatMove.speed += 5f;
 
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
 
         yield return new WaitForSeconds(timer);
 
-        Bolder_Player1.transform.localScale /= multiplier;
 
-        
+        BoatMove.speed = originalSpeed;
+
 
         Destroy(gameObject);
 
@@ -56,24 +57,23 @@ public class PUballsizePlus : MonoBehaviour
     {
         Instantiate(pickupEffect, transform.position, transform.rotation);
 
-        Bolder_Player2 = GameObject.Find("Bolder_Player2");
+        GameObject Player2 = GameObject.Find("Player2");
 
-        Bolder_Player2.transform.localScale *= multiplier;
+        BoatMove BoatMove = Player2.GetComponent<BoatMove>();
+        BoatMove.speed += 5f;
 
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
 
         yield return new WaitForSeconds(timer);
 
-        Bolder_Player2.transform.localScale /= multiplier;
 
-     
+        BoatMove.speed = originalSpeed;
+
 
         Destroy(gameObject);
 
     }
-
-
 
 
 }
