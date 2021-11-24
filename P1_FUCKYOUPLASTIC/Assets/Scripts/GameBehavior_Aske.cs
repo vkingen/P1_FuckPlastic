@@ -11,6 +11,8 @@ public class GameBehavior_Aske : MonoBehaviour
 
     // Won screen
     public bool showWinScreen = false;
+    string winningText = "You won!";
+    string losingText = "You lose!";
 
     void OnGUI()
     {
@@ -19,8 +21,12 @@ public class GameBehavior_Aske : MonoBehaviour
         // 5
         GUI.Box(new Rect(20, 50, 150, 25), box2);
         // 6
-        GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height -
+        GUI.Label(new Rect(Screen.width / 2, Screen.height -
         50, 300, 50), labelText);
+
+        if (showWinScreen == true) {
+            GUI.Box(new Rect(20, 20, 150, 25), winningText);
+        }       
     }
 }
 
