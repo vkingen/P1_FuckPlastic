@@ -19,6 +19,6 @@ public class GameMenuUI_Aske : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        titleText.text = "Welcome to *game name*!" + score;
+        titleText.text = "High score: " + score;
     }
 }
