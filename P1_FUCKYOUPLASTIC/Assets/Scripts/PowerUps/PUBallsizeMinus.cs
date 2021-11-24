@@ -12,7 +12,7 @@ public class PUBallsizeMinus : MonoBehaviour
     public GameObject Bolder_Player1;
     public GameObject Bolder_Player2;
 
-    public int timer = 10;
+    public int timer = 5;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -25,7 +25,7 @@ public class PUBallsizeMinus : MonoBehaviour
         else if (other.CompareTag("Player2"))
 
         {
-            StartCorutine (Pickup2(other);
+            StartCoroutine (Pickup2(other));
         }
 
 
@@ -59,6 +59,8 @@ public class PUBallsizeMinus : MonoBehaviour
         Bolder_Player2.transform.localScale *= multiplier;
 
         yield return new WaitForSeconds(timer);
+
+        transform.localScale /= multiplier;
 
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
