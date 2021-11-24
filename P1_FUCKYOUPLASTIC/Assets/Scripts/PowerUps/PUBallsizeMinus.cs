@@ -45,7 +45,10 @@ public class PUBallsizeMinus : MonoBehaviour
         GetComponent<Collider>().enabled = false;
 
         yield return new WaitForSeconds(timer);
-        transform.localScale /= multiplier;
+
+        Bolder_Player1.transform.localScale /= multiplier;
+        //Bolder_Player1.transform.localScale = new Vector3(9,9,9);
+
         Destroy(gameObject);
 
     }
@@ -62,7 +65,8 @@ public class PUBallsizeMinus : MonoBehaviour
         GetComponent<Collider>().enabled = false;
 
         yield return new WaitForSeconds(timer);
-        transform.localScale /= multiplier;
+        
+        Bolder_Player2.transform.localScale /= multiplier;
 
         Destroy(gameObject);
 
