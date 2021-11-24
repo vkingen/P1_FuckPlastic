@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     //PlayButton calls this method, which goes to the next scene in the row
     public void PlayGame ()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + addOne);
+        SceneManager.LoadScene("MapSelectionUI");
     }
 
     //QuitButton calls this method, which quits the game
