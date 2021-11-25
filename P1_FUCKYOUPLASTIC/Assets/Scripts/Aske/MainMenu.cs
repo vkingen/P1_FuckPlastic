@@ -13,9 +13,16 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("MapSelectionUI");
     }
 
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("GameMenuUI");
+    }
+
     //QuitButton calls this method, which quits the game
     public void QuitGame ()
     {
         Application.Quit();
     }
+
+
 }

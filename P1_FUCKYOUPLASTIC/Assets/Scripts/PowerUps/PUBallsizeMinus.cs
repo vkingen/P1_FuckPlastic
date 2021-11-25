@@ -45,7 +45,7 @@ public class PUBallsizeMinus : MonoBehaviour
 
         yield return new WaitForSeconds(timer);
 
-        transform.localScale /= multiplier;
+        Bolder_Player1.transform.localScale /= multiplier;
 
         
 
@@ -65,9 +65,9 @@ public class PUBallsizeMinus : MonoBehaviour
 
         yield return new WaitForSeconds(timer);
 
-        transform.localScale /= multiplier;
+        Bolder_Player2.transform.localScale /= multiplier;
 
-        
+            
 
         Destroy(gameObject);
 
