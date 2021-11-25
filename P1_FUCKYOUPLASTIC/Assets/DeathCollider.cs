@@ -15,6 +15,7 @@ public class DeathCollider : MonoBehaviour
 
     private int playerTwoLives;
 
+    InGamePointSystem iGPS;
 
 
     //public GameObject bolderPlayer, bolderPlayer2;
@@ -28,6 +29,9 @@ public class DeathCollider : MonoBehaviour
     private void Start()
     {
         mTC = FindObjectOfType<MultiTargetCamera>();
+
+        iGPS = FindObjectOfType<InGamePointSystem>();
+        iGPS.ShowUI();
 
         playerOneLives = GameObject.Find("IngameCanvas").GetComponent<InGamePointSystem>().playerOneLives;
         playerTwoLives = GameObject.Find("IngameCanvas").GetComponent<InGamePointSystem>().playerTwoLives;

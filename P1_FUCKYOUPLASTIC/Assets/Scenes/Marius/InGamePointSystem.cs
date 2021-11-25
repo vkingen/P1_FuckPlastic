@@ -16,9 +16,10 @@ public class InGamePointSystem : MonoBehaviour
 
 
     public Text playerOneLivesText, playerTwoLivesText;
+    public GameObject healthIconP1, healthIconP2;
 
 
-    public string lifeText = "Lives: ";
+   // public string lifeText = "Lives: ";
     
 
     private void Awake()
@@ -42,8 +43,8 @@ public class InGamePointSystem : MonoBehaviour
         //playerTwoLives = playerLives;
         
 
-        playerOneLivesText.text = lifeText + playerOneLives.ToString();
-        playerTwoLivesText.text = lifeText + playerTwoLives.ToString();
+        playerOneLivesText.text = playerOneLives.ToString();
+        playerTwoLivesText.text = playerTwoLives.ToString();
     }
 
     private void Update()
@@ -51,27 +52,45 @@ public class InGamePointSystem : MonoBehaviour
         if (playerOneLives == 0)
         {
             playerOneLives = 3;
+            playerTwoLives = 3;
+            playerOneLivesText.text = "";
+            playerTwoLivesText.text = "";
+            healthIconP1.SetActive(false);
+            healthIconP2.SetActive(false);
             SceneManager.LoadScene("P2Wins");
         }
         else if(playerTwoLives == 0)
         {
             playerTwoLives = 3;
+            playerOneLives = 3;
+            playerTwoLivesText.text = "";
+            playerOneLivesText.text = "";
+            healthIconP1.SetActive(false);
+            healthIconP2.SetActive(false);
             SceneManager.LoadScene("P1Wins");
         }
 
 
     }
 
+    public void ShowUI()
+    {
+        playerOneLivesText.text = playerOneLives.ToString();
+        playerTwoLivesText.text = playerTwoLives.ToString();
+        healthIconP1.SetActive(true);
+        healthIconP2.SetActive(true);
+    }
+
 
     public void RemoveLifePlayerOne()
     {
         playerOneLives -= removeLife;
-        playerOneLivesText.text = lifeText + playerOneLives.ToString();
+        playerOneLivesText.text = playerOneLives.ToString();
     }
 
     public void RemoveLifePlayerTwo()
     {
         playerTwoLives -= removeLife;
-        playerTwoLivesText.text = lifeText + playerTwoLives.ToString();
+        playerTwoLivesText.text = playerTwoLives.ToString();
     }
 }
