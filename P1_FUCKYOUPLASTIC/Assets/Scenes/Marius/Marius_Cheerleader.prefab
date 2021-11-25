@@ -593,7 +593,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  distance2Ground: 0.1
+  distanceToGround: 0.1
   jumpVelocity: 1000
   moveSpeed: 10
   isPlayerOne: 0
