@@ -7,7 +7,7 @@ public class PUspeedMinus : MonoBehaviour
 
 
     public float multiplier = 3f;
-    public float originalSpeed = 10.0f;
+    public float originalSpeed = 5.0f;
 
     public GameObject pickupEffect;
 
@@ -38,7 +38,7 @@ public class PUspeedMinus : MonoBehaviour
     {
         Instantiate(pickupEffect, transform.position, transform.rotation);
 
-        GameObject Player2 = GameObject.Find("Player2");
+        GameObject Player = GameObject.Find("Player2");
 
         BoatMove BoatMove = Player2.GetComponent<BoatMove>();
         BoatMove.speed -= 5f;
@@ -59,7 +59,7 @@ public class PUspeedMinus : MonoBehaviour
     {
         Instantiate(pickupEffect, transform.position, transform.rotation);
 
-        GameObject Player = GameObject.Find("Player");
+        GameObject Player2 = GameObject.Find("Player");
 
         BoatMove BoatMove = Player.GetComponent<BoatMove>();
         BoatMove.speed -= 5f;
