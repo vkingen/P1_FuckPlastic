@@ -11,6 +11,12 @@ public class DeathCollider : MonoBehaviour
     //public GameObject newPlayer, newPlayer2;
     public int waitSeconds = 1;
 
+    private int playerOneLives;
+
+    private int playerTwoLives;
+
+
+
     //public GameObject bolderPlayer, bolderPlayer2;
     //public GameObject ropeSolver, ropeSolver2;
 
@@ -22,6 +28,14 @@ public class DeathCollider : MonoBehaviour
     private void Start()
     {
         mTC = FindObjectOfType<MultiTargetCamera>();
+
+        playerOneLives = GameObject.Find("Canvas").GetComponent<InGamePointSystem>().playerOneLives;
+        playerTwoLives = GameObject.Find("Canvas").GetComponent<InGamePointSystem>().playerTwoLives;
+
+        //GameObject.Find("Canvas").GetComponent<InGamePointSystem>().PlayerOneWins();
+        
+
+
     }
 
     IEnumerator LoadOnDelay() //Forsinker 'reload' a scenen, med x antal sekunder. 
@@ -33,15 +47,18 @@ public class DeathCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
-            InGamePointSystem.instance.RemoveLifePlayerOne();
+            if(playerOneLives > 0)
+            {
 
-            //Destroy(player.gameObject);
+                InGamePointSystem.instance.RemoveLifePlayerOne();
 
-            //Instantiate(newPlayer, new Vector3(0, 5, 0), Quaternion.identity);
+                //Destroy(player.gameObject);
 
-         //if (player == null)
+                //Instantiate(newPlayer, new Vector3(0, 5, 0), Quaternion.identity);
+
+                //if (player == null)
 
                 //player.transform.position = resetPlayerPos.position;
                 //bolderPlayer.transform.position = resetBolderPos.position;
@@ -56,23 +73,28 @@ public class DeathCollider : MonoBehaviour
                 //other.gameObject
                 Debug.Log("Player one is dead");
 
-            StartCoroutine(LoadOnDelay());
+                StartCoroutine(LoadOnDelay());
+            }
         }
         if (other.tag == "Player2")
         {
-            InGamePointSystem.instance.RemoveLifePlayerTwo();
+            if (playerTwoLives > 0)
+            {
+                InGamePointSystem.instance.RemoveLifePlayerTwo();
 
-            //player2.transform.position = resetPlayerPos.position;
-            //bolderPlayer2.transform.position = resetBolderPos.position;
-            //ropeSolver2.transform.position = resetPlayerPos.position;
+                //player2.transform.position = resetPlayerPos.position;
+                //bolderPlayer2.transform.position = resetBolderPos.position;
+                //ropeSolver2.transform.position = resetPlayerPos.position;
 
-            mTC.targets.Clear();
-            //mTC.CenterPositionOfCameraOnDeath();
-            mTC.isDead = true;
-            //Destroy(other.gameObject);
-            Debug.Log("Player two is dead");
+                mTC.targets.Clear();
+                //mTC.CenterPositionOfCameraOnDeath();
+                mTC.isDead = true;
+                //Destroy(other.gameObject);
+                Debug.Log("Player two is dead");
 
-            StartCoroutine(LoadOnDelay());
+                StartCoroutine(LoadOnDelay());
+            }
+                
         }
     }
 }

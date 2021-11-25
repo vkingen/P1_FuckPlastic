@@ -36,7 +36,7 @@ public class PUspeedPlus : MonoBehaviour
     {
         Instantiate(pickupEffect, transform.position, transform.rotation);
 
-        GameObject Player1 = GameObject.Find("Player");
+        GameObject Player = GameObject.Find("Player");
 
         BoatMove BoatMove = Player.GetComponent<BoatMove>();
         BoatMove.speed += 5f;

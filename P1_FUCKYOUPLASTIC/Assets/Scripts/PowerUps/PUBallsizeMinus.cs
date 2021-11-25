@@ -40,12 +40,14 @@ public class PUBallsizeMinus : MonoBehaviour
 
         Bolder_Player1.transform.localScale *= multiplier;
 
-        yield return new WaitForSeconds(timer);
-
-        transform.localScale /= multiplier;
-
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
+
+        yield return new WaitForSeconds(timer);
+
+        Bolder_Player1.transform.localScale /= multiplier;
+
+        
 
         Destroy(gameObject);
 
@@ -58,12 +60,14 @@ public class PUBallsizeMinus : MonoBehaviour
 
         Bolder_Player2.transform.localScale *= multiplier;
 
-        yield return new WaitForSeconds(timer);
-
-        transform.localScale /= multiplier;
-
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
+
+        yield return new WaitForSeconds(timer);
+
+        Bolder_Player2.transform.localScale /= multiplier;
+
+            
 
         Destroy(gameObject);
 
