@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 3a84029230d3d794192b94e063b7acbb
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - AlphaRope
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: bdbbd2f69ba46f142b19fbfc9e62a1d5, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
