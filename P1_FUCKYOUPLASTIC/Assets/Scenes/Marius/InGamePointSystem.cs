@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 //https://www.youtube.com/watch?v=YUcvy9PHeXs
 public class InGamePointSystem : MonoBehaviour
@@ -51,11 +52,13 @@ public class InGamePointSystem : MonoBehaviour
     {
         if (playerOneLives == 0)
         {
-            Debug.Log("Player two wins");
+            playerOneLives = 3;
+            SceneManager.LoadScene("P2Wins");
         }
         else if(playerTwoLives == 0)
         {
-            Debug.Log("Player one wins");
+            playerTwoLives = 3;
+            SceneManager.LoadScene("P1Wins");
         }
 
 
@@ -72,15 +75,5 @@ public class InGamePointSystem : MonoBehaviour
     {
         playerTwoLives -= removeLife;
         playerTwoLivesText.text = lifeText + playerTwoLives.ToString();
-    }
-
-    public void PlayerOneWins()
-    {
-        Instantiate(PlayerOneWinsText);
-    }
-
-    public void PlayerTwoWins()
-    {
-        Instantiate(PlayerTwoWinsText);
     }
 }

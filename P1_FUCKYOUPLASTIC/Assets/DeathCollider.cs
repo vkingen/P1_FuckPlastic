@@ -75,11 +75,6 @@ public class DeathCollider : MonoBehaviour
 
                 StartCoroutine(LoadOnDelay());
             }
-            else
-            {
-                
-            }
-           
         }
         if (other.tag == "Player2")
         {
