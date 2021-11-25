@@ -29,8 +29,8 @@ public class DeathCollider : MonoBehaviour
     {
         mTC = FindObjectOfType<MultiTargetCamera>();
 
-        playerOneLives = GameObject.Find("Canvas").GetComponent<InGamePointSystem>().playerOneLives;
-        playerTwoLives = GameObject.Find("Canvas").GetComponent<InGamePointSystem>().playerTwoLives;
+        playerOneLives = GameObject.Find("IngameCanvas").GetComponent<InGamePointSystem>().playerOneLives;
+        playerTwoLives = GameObject.Find("IngameCanvas").GetComponent<InGamePointSystem>().playerTwoLives;
 
         //GameObject.Find("Canvas").GetComponent<InGamePointSystem>().PlayerOneWins();
         
@@ -71,7 +71,6 @@ public class DeathCollider : MonoBehaviour
                 mTC.isDead = true;
                 //Destroy(other.gameObject);
                 //other.gameObject
-                Debug.Log("Player one is dead");
 
                 StartCoroutine(LoadOnDelay());
             }
@@ -90,7 +89,6 @@ public class DeathCollider : MonoBehaviour
                 //mTC.CenterPositionOfCameraOnDeath();
                 mTC.isDead = true;
                 //Destroy(other.gameObject);
-                Debug.Log("Player two is dead");
 
                 StartCoroutine(LoadOnDelay());
             }

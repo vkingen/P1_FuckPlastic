@@ -8,7 +8,7 @@ public class UImanager : MonoBehaviour
 {
     public TMP_Text fightText;
     public int timer = 3;
-    BoatMove[] movementsToFreeze;
+    Controls[] movementsToFreeze;
 
     AudioSource aS;
 
@@ -17,7 +17,7 @@ public class UImanager : MonoBehaviour
     {
         aS = GetComponent<AudioSource>();
         aS.Play();
-        movementsToFreeze = FindObjectsOfType<BoatMove>();
+        movementsToFreeze = FindObjectsOfType<Controls>();
         for (int i = 0; i < movementsToFreeze.Length; i++)
         {
             movementsToFreeze[i].isMoving = false;

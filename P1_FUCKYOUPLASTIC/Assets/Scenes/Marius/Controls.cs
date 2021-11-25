@@ -36,7 +36,6 @@ public class Controls : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(isMoving);
         if (isPlayerOne)
         {
             if (isMoving)
