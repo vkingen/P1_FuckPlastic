@@ -39,7 +39,7 @@ public class MultiTargetCamera : MonoBehaviour
     {
         if (isDead)
         {
-            transform.position = Vector3.Lerp(transform.position, startPos, 1 * Time.deltaTime);
+           transform.position = Vector3.Lerp(transform.position, startPos, 1 * Time.deltaTime);
         }
     }
 
@@ -85,11 +85,23 @@ public class MultiTargetCamera : MonoBehaviour
         {
             return targets[0].position;
         }
+        /*Transform tempTarget = targets[0];
+        if (tempTarget== null)
+        {
+            tempTarget = targets[1];
+        }
+        if (tempTarget == null)
+        {
+            return new Bounds().center;
+        }*/
 
         var bounds = new Bounds(targets[0].position, Vector3.zero); //bounds er en unity class der indkapsler objects
         for (int i = 0; i < targets.Count; i++)
         {
-            bounds.Encapsulate(targets[i].position); //laver bounds boxen ny størrelse til at indeholde et nyt target
+            if (targets[i] != null)
+            {
+                bounds.Encapsulate(targets[i].position); //laver bounds boxen ny størrelse til at indeholde et nyt target
+            }
         }
        
         return bounds.center;
