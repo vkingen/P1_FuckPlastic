@@ -7,7 +7,7 @@ public class PUspeedMinus : MonoBehaviour
 
 
     public float multiplier = 3f;
-    public float originalSpeed = 5.0f;
+    public float originalSpeed = 10.0f;
 
     public GameObject pickupEffect;
 
@@ -18,13 +18,13 @@ public class PUspeedMinus : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player2"))
 
         {
             StartCoroutine(Pickup(other));
         }
 
-        else if (other.CompareTag("Player2"))
+        else if (other.CompareTag("Player"))
 
         {
             StartCoroutine(Pickup2(other));
@@ -40,8 +40,8 @@ public class PUspeedMinus : MonoBehaviour
 
         GameObject Player = GameObject.Find("Player2");
 
-        BoatMove BoatMove = Player2.GetComponent<BoatMove>();
-        BoatMove.speed -= 5f;
+        Controls controls = Player.GetComponent<Controls>();
+        controls.moveSpeed -= 5f;
 
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
@@ -49,7 +49,7 @@ public class PUspeedMinus : MonoBehaviour
         yield return new WaitForSeconds(timer);
 
 
-        BoatMove.speed = originalSpeed;
+        controls.moveSpeed = originalSpeed;
 
 
         Destroy(gameObject);
@@ -59,10 +59,10 @@ public class PUspeedMinus : MonoBehaviour
     {
         Instantiate(pickupEffect, transform.position, transform.rotation);
 
-        GameObject Player2 = GameObject.Find("Player");
+        GameObject Player2 = GameObject.Find("Player1");
 
-        BoatMove BoatMove = Player.GetComponent<BoatMove>();
-        BoatMove.speed -= 5f;
+        Controls controls = Player2.GetComponent<Controls>();
+        controls.moveSpeed -= 5f;
 
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
@@ -70,7 +70,7 @@ public class PUspeedMinus : MonoBehaviour
         yield return new WaitForSeconds(timer);
 
 
-        BoatMove.speed = originalSpeed;
+        controls.moveSpeed = originalSpeed;
 
 
         Destroy(gameObject);

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PUspeedPlus : MonoBehaviour
 {
     public float multiplier = 3f;
-    public float originalSpeed = 5.0f;
+    public float originalSpeed = 10.0f;
 
     public GameObject pickupEffect;
 
@@ -36,10 +36,10 @@ public class PUspeedPlus : MonoBehaviour
     {
         Instantiate(pickupEffect, transform.position, transform.rotation);
 
-        GameObject Player = GameObject.Find("Player");
+        GameObject Player = GameObject.Find("Player1");
 
-        BoatMove BoatMove = Player.GetComponent<BoatMove>();
-        BoatMove.speed += 5f;
+        Controls controls = Player.GetComponent<Controls>();
+        controls.moveSpeed += 5f;
 
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
@@ -47,7 +47,7 @@ public class PUspeedPlus : MonoBehaviour
         yield return new WaitForSeconds(timer);
 
 
-        BoatMove.speed = originalSpeed;
+        controls.moveSpeed = originalSpeed;
 
 
         Destroy(gameObject);
@@ -59,8 +59,8 @@ public class PUspeedPlus : MonoBehaviour
 
         GameObject Player2 = GameObject.Find("Player2");
 
-        BoatMove BoatMove = Player2.GetComponent<BoatMove>();
-        BoatMove.speed += 5f;
+        Controls controls = Player2.GetComponent<Controls>();
+        controls.moveSpeed += 5f;
 
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
@@ -68,7 +68,7 @@ public class PUspeedPlus : MonoBehaviour
         yield return new WaitForSeconds(timer);
 
 
-        BoatMove.speed = originalSpeed;
+        controls.moveSpeed = originalSpeed;
 
 
         Destroy(gameObject);
