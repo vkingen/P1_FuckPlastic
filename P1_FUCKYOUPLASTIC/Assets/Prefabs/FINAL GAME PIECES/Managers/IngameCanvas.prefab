@@ -109,7 +109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 91.599976, y: 7.700012}
+  m_AnchoredPosition: {x: 105, y: 22}
   m_SizeDelta: {x: 160, y: 60}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &6037744995923998449
@@ -141,19 +141,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: bdbbd2f69ba46f142b19fbfc9e62a1d5, type: 3}
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 50
+    m_MinSize: 0
+    m_MaxSize: 90
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Player 1 Health:'
+  m_Text: 3
 --- !u!1 &6037744995958569273
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +276,6 @@ MonoBehaviour:
   playerTwoLivesText: {fileID: 6037744996604303098}
   healthIconP1: {fileID: 6516609928725241420}
   healthIconP2: {fileID: 3440340047018892605}
-  lifeText: 'Lives: '
 --- !u!1 &6037744996604303100
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +310,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -91.599976, y: 7.6999817}
+  m_AnchoredPosition: {x: -104, y: 18}
   m_SizeDelta: {x: 160, y: 60}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &6037744996604303097
@@ -343,19 +342,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: bdbbd2f69ba46f142b19fbfc9e62a1d5, type: 3}
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 40
+    m_MaxSize: 60
     m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Player 2 Health:'
+  m_Text: 3
 --- !u!1 &6516609928725241420
 GameObject:
   m_ObjectHideFlags: 0
