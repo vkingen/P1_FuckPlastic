@@ -15,10 +15,20 @@ public class InGamePointSystem : MonoBehaviour
     public Text playerOneLivesText, playerTwoLivesText;
 
     public string lifeText = "Lives: ";
+    
 
     private void Awake()
     {
-        instance = this;
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        
     }
 
     // Start is called before the first frame update
