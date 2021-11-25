@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Prefabs/vking/Viking_Map.unity
+    guid: 961a51b0e6827014492a42da9c29a8c7
+  - enabled: 1
     path: Assets/Scenes/Aske/MapSelectionUI.unity
     guid: 4035fa13ed3bc9a45b993fe5e822b877
   - enabled: 1
