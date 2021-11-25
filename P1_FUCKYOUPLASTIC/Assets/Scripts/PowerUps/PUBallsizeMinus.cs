@@ -67,7 +67,7 @@ public class PUBallsizeMinus : MonoBehaviour
 
         Bolder_Player2.transform.localScale /= multiplier;
 
-        
+            
 
         Destroy(gameObject);
 
