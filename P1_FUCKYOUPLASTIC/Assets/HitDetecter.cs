@@ -5,10 +5,10 @@ using UnityEngine;
 public class HitDetecter : MonoBehaviour
 {
     public string otherTagToDetect;
-    public GameManager gm;
+    //public GameManager gm;
     public bool isPlayerOne;
     public float addForceSpeed = 10000f;
-    BoatMove bm;
+    Controls bm;
 
     AudioSource aS;
 
@@ -39,9 +39,9 @@ public class HitDetecter : MonoBehaviour
         {
             if (isPlayerOne)
             {
-                gm.DamagePlayer2();
+                //gm.DamagePlayer2();
                 aS.Play();
-                bm = collision.gameObject.GetComponent<BoatMove>();
+                bm = collision.gameObject.GetComponent<Controls>();
                 //bm.enabled = false;
                 bm.isMoving = false;
                 //collision.gameObject.GetComponent<Rigidbody>().AddForce(transform.up * addForceSpeed);
@@ -59,9 +59,9 @@ public class HitDetecter : MonoBehaviour
             }
             else
             {
-                gm.DamagePlayer1();
+                //gm.DamagePlayer1();
                 aS.Play();
-                bm = collision.gameObject.GetComponent<BoatMove>();
+                bm = collision.gameObject.GetComponent<Controls>();
                 //bm.enabled = false;
                 bm.isMoving = false;
                 //collision.gameObject.GetComponent<Rigidbody>().AddForce(transform.up * addForceSpeed);

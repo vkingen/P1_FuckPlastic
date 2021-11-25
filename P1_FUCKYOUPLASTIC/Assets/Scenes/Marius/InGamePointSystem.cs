@@ -14,11 +14,9 @@ public class InGamePointSystem : MonoBehaviour
     public int playerTwoLives = 3;
     private int removeLife = 1;
 
-    private GameObject P1Wins, P2Wins;
 
     public Text playerOneLivesText, playerTwoLivesText;
 
-    public Text PlayerOneWinsText, PlayerTwoWinsText;
 
     public string lifeText = "Lives: ";
     
