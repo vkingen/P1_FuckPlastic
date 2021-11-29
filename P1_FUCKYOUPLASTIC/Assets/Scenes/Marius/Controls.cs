@@ -20,6 +20,7 @@ public class Controls : MonoBehaviour
     private Rigidbody rb;
     private BoxCollider col;
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();

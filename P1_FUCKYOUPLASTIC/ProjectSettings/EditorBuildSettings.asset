@@ -6,21 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Aske/GameMenuUI.unity
+    path: Assets/Prefabs/FINAL GAME PIECES/Scenes/GameMenuUI.unity
     guid: 70dca2f9f8106894ea2271f4d638efb2
   - enabled: 1
-    path: Assets/Prefabs/vking/Viking_Map.unity
-    guid: 961a51b0e6827014492a42da9c29a8c7
-  - enabled: 1
-    path: Assets/Scenes/Aske/MapSelectionUI.unity
+    path: Assets/Prefabs/FINAL GAME PIECES/Scenes/MapSelectionUI.unity
     guid: 4035fa13ed3bc9a45b993fe5e822b877
   - enabled: 1
-    path: Assets/Scenes/Aske/Island.unity
-    guid: 1ee648ef15feb7141b9398ac86afb209
+    path: Assets/Prefabs/FINAL GAME PIECES/Scenes/P1Wins.unity
+    guid: 0507d1a6cc744fe4d9a91b2f3733dc6e
   - enabled: 1
-    path: Assets/Scenes/Aske/P1Wins.unity
-    guid: 9705f44702acc394a97d14493e574595
+    path: Assets/Prefabs/FINAL GAME PIECES/Scenes/P2Wins.unity
+    guid: 343d884428231cc4084691d333f7a306
   - enabled: 1
-    path: Assets/Scenes/Aske/P2Wins.unity
-    guid: 33282df69016d1b4095c85535c543e52
+    path: Assets/Prefabs/FINAL GAME PIECES/Scenes/SpaceMap.unity
+    guid: 0330f480f9d6d2d428497e3468349fe5
+  - enabled: 1
+    path: Assets/Prefabs/FINAL GAME PIECES/Scenes/RoadMap.unity
+    guid: 961a51b0e6827014492a42da9c29a8c7
+  - enabled: 1
+    path: Assets/Prefabs/FINAL GAME PIECES/Scenes/PyramidMap.unity
+    guid: 1e3af1910788ab34ea8dca741ea5879a
   m_configObjects: {}
